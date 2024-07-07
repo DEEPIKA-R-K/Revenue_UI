@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <ul class="nav">
+        <li type="none"><a><i class="fa-solid fa-robot" style="color:#fafafa; font-size: 25px;"></i></a></li>
+        <li><a><i class="fa-solid fa-house" style="color: #fafafa;font-size: 20px;"></i>Home</a></li>
+        <li><a><i class='fas fa-award' style="color:#fafafa; font-size: 25px;"></i>Courses</a></li>
+        <li><a><i class="fa-solid fa-wand-magic-sparkles" style="color:#fafafa; font-size: 25px;"></i>Events</a></li>
+        <li><a><i class="fa-solid fa-building-columns" style="color:#fafafa; font-size: 25px;"></i>Institution</a></li>
+        <li><a><i class="fa-solid fa-hand-holding-dollar" style="color:#fafafa; font-size: 25px;"></i>Revenue</a></li>
+        <li><a><i class="fa-solid fa-magnifying-glass-chart" style="color:#fafafa; font-size: 25px;"></i>Analytics</a></li>
+    </ul>
+    <element class="side-page">
+    <div class="page">
+        <div class="nav1">
+        <ul type="none">
+            <li><a><i class="fa-solid fa-chevron-left"></i></a></li>
+            <li><a><i class="fa-solid fa-chevron-right"></i></a></li>
+            <li><a><button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text" placeholder="Search for courses,skills,certifications and peers" name="search" id="i1"></a></li>
+            <li><a><i class="fa-solid fa-envelope" style="font-size:28px; padding-left: 280px;"></i></a></li>
+            <li><a><i class="fa-solid fa-bell" style="font-size:30px;"></i></a></li>
+            <li><image src="/image/passport size photo.jpg" width="35"></li>
+        </ul>
+        </div>
+    </div>  
+    <div class="page-m">
+         <ul type="none">
+            <li><a>Overview</a></li>
+            <li><a>Orders</a></li>
+            <li><a>Payments</a></li>
+            <li><a>Bankings</a></li>
+            <li><a>Settings</a></li>
+         </ul>
+    </div> 
+</element>
+</div>
+<h1>Revenue<span>
+    <select name="Courses" id="courses">
+        <option value="Courses">Courses</option>
+    </select>
+    <select name="week" id="week">
+        <option value="week">this week</option>
+    </select>
+</span></h1>
+<div class="revenue">
+    <h3 id="rs">&#8377;32,000<span style="padding:60px;"></span><span style="color:green;">&#129033;</span>4%</h3>
+    <h5>Earnings&#123;this week&#125;<span style="padding:49px"></span>Previous&#123;week&#125;</h5>
+    <div class="re-table">
+        <h4>Top selling courses</h4>
+         <table>
+        <tr>
+            <td id="rn">1</td>
+            <td>Beginner PHP course</td>
+            <td>&#8377;14,000</td>
+        </tr>
+        <tr>
+            <td id="rn">2</td>
+            <td>PHP Workshop with Anna University</td>
+            <td>&#8377;10,000</td>
+        </tr>
+        <tr>
+            <td id="rn">3</td>
+            <td>Advanced PHP course</td>
+            <td>&#8377;8,000</td>
+        </tr>
+         </table>
+    </div>
+    <div id="revenue-half">
+        <canvas id="chartId" aria-label="chart" height="300" width="400"></canvas>
+    </div>
+</div> 
+<h2>Recent Transactions<span id="show-op">Show all transactions</span></h2>  
+<div class="table">
+    <table>
+        <tr>
+            <th><input type="checkbox"></th>
+            <th>Received from</th>
+            <th>paid for</th>
+            <th>Through</th>
+            <th>Amount</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>Siddharth R<p>jun 10,2021 at 10.00 AM</p></td>
+            <td>Festival of UX/UI Design<p>Term fees</p></td>
+            <td>Cash</td>
+            <td id="rs1">&#8377;12,345.00+</td>
+            <td>***</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>Siddharth R<p>jun 10,2021 at 10.00 AM</p></td>
+            <td>Festival of UX/UI Design<p>Term fees</p></td>
+            <td>Online</td>
+            <td id="rs1">&#8377;12,345.00+</td>
+            <td>***</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>Siddharth R<p>jun 10,2021 at 10.00 AM</p></td>
+            <td>Festival of UX/UI Design<p>Term fees</p></td>
+            <td>Online</td>
+            <td id="rs2">&#8377;12,345.00-</td>
+            <td>***</td>
+        </tr>
+    </table>      
+  </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/helpers.esm.min.js">
+   </script>
+   <script>
+      var chrt = document.getElementById("chartId").getContext("2d");
+      var chartId = new Chart(chrt, {
+         type: 'bar',
+         data: {
+            labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "saturday", "Sunday"],
+            datasets: [{
+               label: "Course sales for {this week}",
+               data: [20, 70, 40, 60, 80, 65],
+               backgroundColor: [, 'aqua', 'pink', 'lightgreen', 'lightblue', 'gold'],
+               borderColor: ['red', 'blue', 'fuchsia', 'green', 'navy', 'black'],
+               borderWidth: 0.2,
+            }],
+         },
+         options: {
+            responsive: false,
+         },
+      });
+   </script>
+</body>
+</html>
